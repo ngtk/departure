@@ -94,6 +94,35 @@ gem_group :test, :development do
 end
 
 #
+# Enhancement
+#
+gem 'aasm'
+gem 'cancancan', '~> 1.10'
+gem 'config'
+gem 'default_value_for', "~> 3.0.0"
+gem 'delayed_job_active_record'
+gem 'devise'
+gem 'draper', '~> 1.3'
+gem 'kaminari'
+gem 'paperclip', '~> 4.3'
+gem 'paper_trail', '~> 4.0.2'
+gem 'simple_form'
+gem 'squeel'
+
+application <<-APP
+config.active_job.queue_adapter = :delayed_job
+APP
+
+after_bundle do
+  generate 'cancan:ability'
+  generate 'config:install'
+  generate 'devise:install'
+  generate 'paper_trail:install'
+  generate 'simple_form:install'
+  generate 'squeel:initializer'
+end
+
+#
 # Initial commit
 #
 after_bundle do
