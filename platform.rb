@@ -54,6 +54,9 @@ end
 APP
 
 after_bundle do
+  # fix rspec:install stuck issue
+  # ref: https://github.com/rspec/rspec-rails/issues/996
+  run './bin/spring stop'
   generate 'rspec:install'
   remove_file 'spec/rails_helper.rb'
   copy_file   'spec/rails_helper.rb'
