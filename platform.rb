@@ -39,6 +39,7 @@ gem_group :test, :development do
   gem 'capybara-screenshot'
   gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
+  gem "spring-commands-rspec"
   gem 'shoulda-matchers', require: false
   gem 'timecop'
 end
