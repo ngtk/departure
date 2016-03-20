@@ -30,6 +30,12 @@ def environment(data=nil, options={})
 end
 alias :application :environment
 
+# replace path/to/artifact/target with path/to/departure/target
+def replace_file(target)
+  remove_file(target)
+  create_file(target)
+end
+
 #
 # Testing
 #
@@ -58,6 +64,5 @@ after_bundle do
   # ref: https://github.com/rspec/rspec-rails/issues/996
   run './bin/spring stop'
   generate 'rspec:install'
-  remove_file 'spec/rails_helper.rb'
-  copy_file   'spec/rails_helper.rb'
+  replace_file 'spec/rails_helper.rb'
 end
