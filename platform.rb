@@ -92,3 +92,12 @@ gem_group :test, :development do
   gem 'rubocop', require: false
   gem 'scss_lint', require: false
 end
+
+#
+# Initial commit
+#
+after_bundle do
+  git :init
+  git add: '.'
+  git commit: '-m "new rails application"'
+end
