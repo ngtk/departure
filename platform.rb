@@ -84,3 +84,11 @@ end
 after_bundle do
   generate 'annotate:install'
 end
+
+#
+# Lint
+#
+gem_group :test, :development do
+  gem 'rubocop', require: false
+  gem 'scss_lint', require: false
+end
