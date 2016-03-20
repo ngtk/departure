@@ -66,3 +66,21 @@ after_bundle do
   generate 'rspec:install'
   replace_file 'spec/rails_helper.rb'
 end
+
+#
+# Debug
+#
+gem_group :test, :development do
+  gem 'annotate'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'pry-rails'
+  gem 'quiet_assets'
+end
+
+after_bundle do
+  generate 'annotate:install'
+end
