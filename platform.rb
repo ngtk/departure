@@ -3,6 +3,9 @@
 # Rails 4 application template
 #
 
+#
+# Helper
+#
 # overwriting the source_paths method to contain
 # current path includes templates.
 def source_paths
@@ -36,11 +39,9 @@ def replace_file(target)
   create_file(target)
 end
 
-
 #
 # Server
 #
-
 gem 'puma'
 
 #
@@ -129,7 +130,9 @@ after_bundle do
   generate 'squeel:initializer'
 end
 
+#
 # UI framework
+#
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 
 after_bundle do
