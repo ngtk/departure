@@ -130,3 +130,5 @@ after_bundle do
   git add: '.'
   git commit: '-m "new rails application"'
 end
+
+say "installed successfully! Yay!", :green
