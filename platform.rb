@@ -122,6 +122,16 @@ after_bundle do
   generate 'squeel:initializer'
 end
 
+# UI framework
+gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+
+after_bundle do
+  remove_file "app/assets/stylesheets/application.css"
+  create_file "app/assets/stylesheets/application.scss"
+  append_to_file 'app/assets/stylesheets/application.scss', '@import "semantic-ui";'
+  append_to_file 'app/assets/javascripts/application.js', '//= require semantic-ui'
+end
+
 #
 # Initial commit
 #
