@@ -3,6 +3,10 @@
 # Rails 4 application template
 #
 
+module Platform
+  VERSION = 0.1.0
+end
+
 #
 # Helper
 #
