@@ -36,6 +36,13 @@ def replace_file(target)
   create_file(target)
 end
 
+
+#
+# Server
+#
+
+gem 'puma'
+
 #
 # Testing
 #
