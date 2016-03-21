@@ -2,8 +2,6 @@ language: ruby
 rvm:
   - 2.3.0
   - 2.2.4
-install:
-  - gem sources --add https://rubygems.org/
-  - gem install rails 4.2.6
-  - gem install rspec
+gemfile:
+  - gemfiles/Gemfile.rails-4.2.6
 script: rspec platform_spec.rb
