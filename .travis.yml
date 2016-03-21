@@ -3,6 +3,7 @@ rvm:
   - 2.3.0
   - 2.2.4
 install:
+  - gem sources --add https://rubygems.org/
   - gem install rails 4.2.6
   - gem install rspec
 script: rspec platform_spec.rb
