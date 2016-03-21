@@ -43,6 +43,10 @@ def replace_file(target)
   create_file(target)
 end
 
+def departure_sign
+  "departed from the Platform v#{Platform::VERSION}"
+end
+
 #
 # Server
 #
@@ -152,7 +156,7 @@ end
 after_bundle do
   git :init
   git add: '.'
-  git commit: '-m "new rails application"'
+  git commit: %Q(-m "new rails application" -m "#{departure_sign}")
 end
 
 say "installed successfully! Yay!", :green
